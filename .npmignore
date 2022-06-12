@@ -1,0 +1,8 @@
+/coverage
+/functional_tests
+/node_modules
+/src
+.gitignore
+.eslintignore
+.eslintrc.js
+tsconfig.json

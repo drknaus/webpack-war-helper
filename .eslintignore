@@ -1,0 +1,7 @@
+**/*.js
+**/*.css
+**/*.pdf
+**/*.html
+node_modules/*
+publish/*
+dist/*
