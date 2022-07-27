@@ -1,46 +1,46 @@
 {
-  "name": "webpack-war-helper",
-  "version": "0.0.4",
-  "description": "Webpack plugin for bundling build outputs into a WAR archive",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "repository": "https://github.com/drknaus/webpack-war-helper",
-  "author": "Andreas Knaus (LINJAL.GmbH)",
-  "license": "MIT",
-  "scripts": {
-    "lj_publish": "npm run prebuild && npm run build && npm publish",
-    "lj_publish_snapshot": "npm run prebuild && npm run build && npm publish --tag snapshot",
-    "version:snapshot": "npm version prerelease --preid snapshot --no-git-tag-version",
-    "prebuild": "npm run clean",
-    "build": "tsc -d",
-    "clean": "rimraf dist",
-    "test": "mocha --compilers ts:ts-node/register src/**/*.spec.ts",
-    "test:coverage": "nyc npm run test",
-    "test:functional:setup": "cd functional_tests && npm install && npm run setup",
-    "test:functional": "cd functional_tests && npm run test",
-    "coveralls": "cat ./coverage/lcov.info | coveralls",
-    "lint": "eslint -c ./.eslintrc.js src/**/*.ts",
-    "lint:fix": "eslint -c ./.eslintrc.js src/**/*.ts --fix",
-    "lint:noerror": "npm run lint -s"
-  },
-  "publishConfig": {
-    "registry": "https://nexus.keyto.de/repository/npm-internal/"
-  },
-  "dependencies": {
-    "archiver": "^5.3.1",
-    "colors": "^1.4.0",
-    "typescript": "^4.7.3"
-  },
-  "devDependencies": {
-    "@types/archiver": "^5.3.1",
-    "@types/webpack": "^5.28.0",
-    "@typescript-eslint/eslint-plugin": "^5.27.1",
-    "eslint": "^8.17.0",
-    "filesize": "^9.0.1",
-    "jszip": "^3.10.0",
-    "rimraf": "^3.0.2"
-  },
-  "peerDependencies": {
-    "webpack": ">5.0.0"
-  }
+    "name": "webpack-war-helper",
+    "version": "0.0.6",
+    "description": "Webpack plugin for bundling build outputs into a WAR archive",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "repository": "https://github.com/drknaus/webpack-war-helper",
+    "author": "Andreas Knaus (LINJAL.GmbH)",
+    "license": "MIT",
+    "scripts": {
+        "lj_publish": "npm run prebuild && npm run build && npm publish",
+        "lj_publish_snapshot": "npm run prebuild && npm run build && npm publish --tag snapshot",
+        "version:snapshot": "npm version prerelease --preid snapshot --no-git-tag-version",
+        "prebuild": "npm run clean",
+        "build": "tsc -d",
+        "clean": "rimraf dist",
+        "test": "mocha --compilers ts:ts-node/register src/**/*.spec.ts",
+        "test:coverage": "nyc npm run test",
+        "test:functional:setup": "cd functional_tests && npm install && npm run setup",
+        "test:functional": "cd functional_tests && npm run test",
+        "coveralls": "cat ./coverage/lcov.info | coveralls",
+        "lint": "eslint -c ./.eslintrc.js src/**/*.ts",
+        "lint:fix": "eslint -c ./.eslintrc.js src/**/*.ts --fix",
+        "lint:noerror": "npm run lint -s"
+    },
+    "publishConfig": {
+        "registry": "https://nexus.keyto.de/repository/npm-internal/"
+    },
+    "dependencies": {
+        "archiver": "^5.3.1",
+        "colors": "^1.4.0",
+        "filesize": "^9.0.1",
+        "typescript": "^4.7.3"
+    },
+    "devDependencies": {
+        "@types/archiver": "^5.3.1",
+        "@types/webpack": "^5.28.0",
+        "@typescript-eslint/eslint-plugin": "^5.27.1",
+        "eslint": "^8.17.0",
+        "jszip": "^3.10.0",
+        "rimraf": "^3.0.2"
+    },
+    "peerDependencies": {
+        "webpack": ">5.0.0"
+    }
 }
