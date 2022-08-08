@@ -1,6 +1,6 @@
 {
     "name": "webpack-war-helper",
-    "version": "0.0.6",
+    "version": "1.0.0",
     "description": "Webpack plugin for bundling build outputs into a WAR archive",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
@@ -37,7 +37,7 @@
         "@types/webpack": "^5.28.0",
         "@typescript-eslint/eslint-plugin": "^5.27.1",
         "eslint": "^8.17.0",
-        "jszip": "^3.10.0",
+        "jszip": "^3.10.1",
         "rimraf": "^3.0.2"
     },
     "peerDependencies": {
