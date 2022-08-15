@@ -40,7 +40,7 @@ export class WebpackWarHelper {
         //const outputPath = (compiler["options"]["output"] ? compiler["options"]["output"]["path"] : null) || compiler["outputPath"];
 
         compiler.hooks.thisCompilation.tap(pluginName, (compilation) => {
-            compilation.hooks.processAssets.tapAsync({ name: pluginName, stage: Compilation.PROCESS_ASSETS_STAGE_SUMMARIZE }, (assets, callback) => {
+            compilation.hooks.processAssets.tapAsync({ name: pluginName, stage: Compilation.PROCESS_ASSETS_STAGE_OPTIMIZE_TRANSFER }, (assets, callback) => {
                 const zip = new JSZip();
                 Object.keys(assets).map(name => {
                     if (name !== archiveName) {
