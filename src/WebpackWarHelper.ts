@@ -42,8 +42,16 @@ export class WebpackWarHelper {
         compiler.hooks.thisCompilation.tap(pluginName, (compilation) => {
             compilation.hooks.processAssets.tapAsync({ name: pluginName, stage: Compilation.PROCESS_ASSETS_STAGE_OPTIMIZE_TRANSFER }, (assets, callback) => {
                 const zip = new JSZip();
+                console.log(bold(`\nCreating WAR-File: ${archiveName}`));
+                for (const filename in compilation.assets) {
+                    if (!filename.startsWith("..")) {
+                        const source = compilation.assets[filename].source();
+                        zip.file(filename, source);
+                    }
+                }
                 Object.keys(assets).map(name => {
-                    if (name !== archiveName) {
+                    if (name !== archiveName && !name.startsWith("..")) {
+                        console.log(bold(`-  Append File: ${name}`));
                         zip.file(name, compilation.getAsset(name).source.buffer());
                     }
                 });
